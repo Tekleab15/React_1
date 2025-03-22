@@ -2,9 +2,9 @@ name: Build, Test and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
     build:
@@ -30,7 +30,7 @@ jobs:
               run: npm run build
 
             - name: Deploy to GitHub Pages
-              uses: Tekleab15/github-pages-deploy-action@v4
+              uses: JamesIves/github-pages-deploy-action@v4
               with:
                 branch: gh-pages
                 folder: build
